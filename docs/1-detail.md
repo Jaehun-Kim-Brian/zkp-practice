@@ -7,14 +7,14 @@
 |------|------|------------|
 | Circom 설치 및 버전 확인 | `circom --version` | ✅ |
 | snarkjs 설치 및 테스트 | `snarkjs --help` | ✅ |
-| 회로 파일 작성 | `multiplier.circom` 등 | ☐ |
-| 회로 컴파일 | `circom multiplier.circom --r1cs --wasm` | ☐ |
-| 입력값 작성 | `input.json` 생성 | ☐ |
-| witness 생성 | `node generate_witness.js` 실행 | ☐ |
-| trusted setup (powers of tau) | `snarkjs powersoftau` → `zkey` 생성 | ☐ |
-| verification key 추출 | `snarkjs zkey export verificationkey` | ☐ |
-| proof 생성 | `snarkjs groth16 prove` | ☐ |
-| proof 검증 | `snarkjs groth16 verify` | ☐ |
+| 회로 파일 작성 | `multiplier.circom` 등 | ✅ |
+| 회로 컴파일 | `circom multiplier.circom --r1cs --wasm` | ✅ |
+| 입력값 작성 | `input.json` 생성 | ✅ |
+| witness 생성 | `node generate_witness.js` 실행 | ✅ |
+| trusted setup (powers of tau) | `snarkjs powersoftau` → `zkey` 생성 | ✅ |
+| verification key 추출 | `snarkjs zkey export verificationkey` | ✅ |
+| proof 생성 | `snarkjs groth16 prove` | ✅ |
+| proof 검증 | `snarkjs groth16 verify` | ✅ |
 
 ---
 
@@ -24,7 +24,7 @@
 
 | 항목 | 설명 | 완료 여부 |
 |------|------|------------|
-| constraint 일부 생략 | 일부 제약조건 없이 회로 작성 | ☐ |
+| constraint 일부 생략 | 일부 제약조건 없이 회로 작성 | ✅ |
 | 입력은 유효하지만 proof 실패 유도 | completeness 깨짐 관찰 | ☐ |
 
 ### 2. Soundness 위반 실험

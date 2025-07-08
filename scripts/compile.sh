@@ -1,13 +1,13 @@
-#!/bin/cash
-
+#!/bin/bash
 set -e
 
-CIRCUIT_NAME=multiplier
-BUILD_DIR=build
+CIRCUIT=${1:-multiplier}
+BUILD_DIR=build/$CIRCUIT
 
 mkdir -p $BUILD_DIR
 
-circom circuits/$CIRCUIT_NAME.circom --r1cs --wasm --sym -o $BUILD_DIR
+circom circuits/$CIRCUIT.circom \
+    --r1cs --wasm --sym -o $BUILD_DIR
 
-echo "[1] CIRCUIT COMPILED: $CIRCUIT_NAME.circom"
+echo "[1] CIRCUIT COMPILED: $CIRCUIT.circom"
 

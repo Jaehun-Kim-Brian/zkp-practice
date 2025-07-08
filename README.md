@@ -11,7 +11,7 @@
 ##  프로젝트 진행 순서 및 우선순위
 
 ### 1. Circom + snarkjs 기반 실습 (기본기 익히기)
-- [ ] `multiplier.circom`과 같은 간단한 회로를 구현하고 ZK-SNARK 프로토콜 전체 흐름 실습
+- [✅] `multiplier.circom`과 같은 간단한 회로를 구현하고 ZK-SNARK 프로토콜 전체 흐름 실습
     - 회로 컴파일 → witness 생성 → trusted setup → proof 생성 → 검증
 - [ ] 실습 시 확인할 보안 속성:
     - Constraint 누락 여부 (Completeness 깨짐 실험)

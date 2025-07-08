@@ -2,8 +2,8 @@
 
 set -e
 
-CIRCUIT=multiplier
-BUILD_DIR=build
+CIRCUIT=${1:-multiplier}
+BUILD_DIR=build/$CIRCUIT
 PTAU=setup/pot12_final.ptau
 ZKEY=$BUILD_DIR/${CIRCUIT}.zkey
 
@@ -16,13 +16,13 @@ snarkjs groth16 setup \
 # 2. Verification key 생성
 snarkjs zkey export verificationkey \
     $ZKEY \
-    verification_key.json
+    $BUILD_DIR/verification_key.json
 
 # 3. 증명생성 (witness -> proof)
 snarkjs groth16 prove \
     $ZKEY \
-    witness.wtns \
-    proof.json \
-    public.json \
+    $BUILD_DIR/witness.wtns \
+    $BUILD_DIR/proof.json \
+    $BUILD_DIR/public.json 
 
 echo "[3] PROOF GENERATED"
