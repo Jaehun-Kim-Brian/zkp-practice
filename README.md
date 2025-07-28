@@ -9,9 +9,10 @@ While zero-knowledge proofs are mathematically well-defined, their security prop
 ## Project Goals
 
 | Security Property | Description | Implement Plan|
-|**Completeness** | If the statement is true, the prover should always generate a valid proof. | [x] Implemeneted (Incomplete Multiplier)|
-|**Soundness** | If the statement is false, no prover should be able to convince the verifier. | [ ] Planned|
-|**Zero-Knowledgeness** | The verifier should learn nothing beyond the truth of the statement. | [ ] Planned|
+|---|---|--------|
+|**Completeness** | If the statement is true, the prover should always generate a valid proof. | Implemeneted (Incomplete Multiplier)|
+|**Soundness** | If the statement is false, no prover should be able to convince the verifier. | Planned|
+|**Zero-Knowledgeness** | The verifier should learn nothing beyond the truth of the statement. | Planned|
 
 ---
 
