@@ -10,42 +10,24 @@ While zero-knowledge proofs are mathematically well-defined, their security prop
 
 | Security Property | Description | Implement Plan|
 |---|---|--------|
-|**Completeness** | If the statement is true, the prover should always generate a valid proof. | Implemeneted (Incomplete Multiplier)|
+|**Completeness** | If the statement is true, the prover should always generate a valid proof. | Implemeneted (2 `Incomplete Multiplier` circuits)|
 |**Soundness** | If the statement is false, no prover should be able to convince the verifier. | Planned|
 |**Zero-Knowledgeness** | The verifier should learn nothing beyond the truth of the statement. | Planned|
 
 ---
 
-##  Current Experiment: Completeness Failure
+##  Experiments 
 
-### Setup
+This project includes several minimal zk-SNARK circuit experiments designed to explore failures or subtleties in the **completeness**, **soundness**, and **zero-knowledge** properties.
 
-- Circuit: `multiplier_incomplete.circom`
-- Constraint `c <== a * b` is intentionally omitted
-- Inputs: `a = 3`, `b = 11`
-- No mechanism to enforce that `c` is indeed the product of `a` and `b`
+Detailed analysis for each experiment is documented separately in its corresponding directory under `experiments/`.
 
-### Results
+|Experiemnt | Description | Analysis|
+|----|----|-----|
+|**Completeness Failure - Incomplete Constraint**| Omits core constraint (`c <== a * b`), so the circuit cannot validate true/false statements.| [View Analysis](https://github.com/Jaehun-Kim-Brian/zkp-practice/blob/main/experiments/completeness-failure/1-no-constraints/analysis.md)|
+|**Completeness Failure - Hidden Output**| Computes `c <== a * b` correctly, but fails to declare `c` as an output, so verifier learns nothing.| [View Analysis](https://github.com/Jaehun-Kim-Brian/zkp-practice/blob/main/experiments/completeness-failure/2-no-output/analysis.md)|
+|*(More coming soon)*| Soundness & Zero-Knowledge experiments planned. | -|
 
-- Witness generated: [x] Success
-- Proof generated: [x] Success
-- Verifier output: `[INFO] snarkJS: OK!` -> [x] Accepted
-
-### Analysis 
-
-- The circuit lacks the constraint that ties `c` to `a * b`
-- Thus, the prover could input *anything* and the verifier would still accept
-- Completeness is **formally satisfied** but **semantically meaningless**
-
----
-
-## Security Interpretation
-
-- The proof **does not** demonstrate that the prover knows how to compute `a * b`
-- Verifier's acceptance is meaningless in this case
-- Also raises a potential **soundness concern**, since false proofs are not rejected
-
----
 
 ## Planned Experiments
 

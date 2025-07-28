@@ -1,34 +1,34 @@
 # Analysis: Completeness Failure — Hidden Output (No signal output declared)
 
-## 📌 실험 개요
+## Experiment Overview
 
-- 실험 회로: `multiplier_incomplete_2.circom`
-- 핵심 제약 조건 `c <== a * b`는 존재하지만,
-- `c`를 `signal output`으로 선언하지 않아 Verifier는 해당 연산 결과를 확인할 수 없음
-
----
-
-## 증명 및 검증 결과
-
-- witness 생성 성공
-- proof 생성 성공
-- 검증 결과: `[INFO] snarkJS: OK!` → **검증 통과**
+- **Circuit**: `multiplier_incomplete_2.circom`
+- The core constraint `c <== a * b` **is present**
+- However, the signal `c` is **not declared as `signal output`**, so the verifier has **no acess** to the result of the multiplication.
 
 ---
 
-## 문제 분석
+## Proof & Verification Results
 
-- Prover는 정직한 입력 `a = 3`, `b = 4`로 `c = 12`를 계산했고, 제약식도 이를 요구함
-- 하지만 `c`가 `signal output`으로 선언되지 않았기 때문에 **Verifier는 이 결과를 전혀 알 수 없음**
-- 결국 Verifier는 “Prover가 뭘 증명했는지 모르는 상태에서” OK를 출력함
+- Witness generation: Success
+- Proof generation: Success
+- Verification result: `[INFO] snarkJS: OK!` → **Verifier accepted the proof**
 
 ---
 
-## 보안적 해석
+## Problem Analysis
 
-- 회로의 구조적 설계 오류로 인해 **참인 명제를 증명해도 Verifier가 그 내용을 전혀 관찰할 수 없음**
-- 즉, Prover는 참을 증명하려 했고 proof도 생성했지만,
-  Verifier는 그 명제가 뭔지조차 몰라서, 결과적으로 completeness는 의미를 상실
-- 이는 명시적인 실패는 아니더라도, **실질적인 completeness 위반** 상황
+- The prover computes `c = 12` honestly using `a = 3` and `b = 4`, and the constraint enforces this correctly.
+- However, since `c` is not marked as an output signal, the verifier has **no way of knowing** what value was actually computed.
+- As a result, the verifier accepts the proof **without understanding what has been proven**.
+
+---
+
+## Security Interpretation
+
+- Due to a **structural design flaw** in the circuit, the prover may indeed prove a true statement,
+but the verifier **has no observable evidence** of what that statement was. 
+- In this case, although completeness is not formally violated (since the proof is valid), it is **functionally meaningless** because the verifier learns nothing.
+- This constitutes a case of **practical completeness failure**, where the success of the proof does not reflect any meaningful verification.
 
 ---
