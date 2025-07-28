@@ -27,8 +27,9 @@ Detailed analysis for each experiment is documented separately in its correspond
 |[**Completeness Failure - Incomplete Constraint**](https://github.com/Jaehun-Kim-Brian/zkp-practice/tree/main/experiments/completeness-failure/1-no-constraints)| Omits core constraint (`c <== a * b`), so the circuit cannot validate true/false statements.| [View Analysis](https://github.com/Jaehun-Kim-Brian/zkp-practice/blob/main/experiments/completeness-failure/1-no-constraints/analysis.md)|
 |[**Completeness Failure - Hidden Output**](https://github.com/Jaehun-Kim-Brian/zkp-practice/tree/main/experiments/completeness-failure/2-no-output)| Computes `c <== a * b` correctly, but fails to declare `c` as an output, so verifier learns nothing.| [View Analysis](https://github.com/Jaehun-Kim-Brian/zkp-practice/blob/main/experiments/completeness-failure/2-no-output/analysis.md)|
 |[**Soundenss Failure - Fake Equality**](https://github.com/Jaehun-Kim-Brian/zkp-practice/tree/main/experiments/soundness-failure/1-fake-equality)| Circuit omits equality constraints between inputs `a` and `b`, allowing any proof to succeed.| [View Analysis](https://github.com/Jaehun-Kim-Brian/zkp-practice/tree/main/experiments/soundness-failure/1-fake-equality/analysis.md)|
-|*(More coming soon)*| Soundness & Zero-Knowledge experiments planned. | -|
+|[**Zero-Knowledge Failure - Private Input Leak**](https://github.com/Jaehun-Kim-Brian/zkp-practice/tree/main/experiments/zero-knowledge-failure/1-leaked-private)| Private input is incorrectly exposed as public output | [View Analysis](https://github.com/Jaehun-Kim-Brian/zkp-practice/tree/main/experiments/zero-knowledge-failure/1-leaked-private/analysis.md)|
 
+---
 
 ## Planned Experiments
 
@@ -42,11 +43,11 @@ Detailed analysis for each experiment is documented separately in its correspond
 
 ---
 
-## Project Roadmap
+## Project  & Future Work
 
 - [x] Completeness test with faulty circuit 
-- [ ] Soundness test with crafted false claim
-- [ ] Zero-knowledge simulation and side-channel test
+- [x] Soundness test with crafted false claim
+- [x] Zero-knowledge simulation and side-channel test
 - [ ] Add interactive visualization (e.g., Matplotlib, Streamlit)
 - [ ] Refactor into a reusable test suite
 
