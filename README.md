@@ -24,8 +24,9 @@ Detailed analysis for each experiment is documented separately in its correspond
 
 |Experiemnt | Description | Analysis|
 |----|----|-----|
-|**Completeness Failure - Incomplete Constraint**| Omits core constraint (`c <== a * b`), so the circuit cannot validate true/false statements.| [View Analysis](https://github.com/Jaehun-Kim-Brian/zkp-practice/blob/main/experiments/completeness-failure/1-no-constraints/analysis.md)|
-|**Completeness Failure - Hidden Output**| Computes `c <== a * b` correctly, but fails to declare `c` as an output, so verifier learns nothing.| [View Analysis](https://github.com/Jaehun-Kim-Brian/zkp-practice/blob/main/experiments/completeness-failure/2-no-output/analysis.md)|
+|[**Completeness Failure - Incomplete Constraint**](https://github.com/Jaehun-Kim-Brian/zkp-practice/tree/main/experiments/completeness-failure/1-no-constraints)| Omits core constraint (`c <== a * b`), so the circuit cannot validate true/false statements.| [View Analysis](https://github.com/Jaehun-Kim-Brian/zkp-practice/blob/main/experiments/completeness-failure/1-no-constraints/analysis.md)|
+|[**Completeness Failure - Hidden Output**](https://github.com/Jaehun-Kim-Brian/zkp-practice/tree/main/experiments/completeness-failure/2-no-output)| Computes `c <== a * b` correctly, but fails to declare `c` as an output, so verifier learns nothing.| [View Analysis](https://github.com/Jaehun-Kim-Brian/zkp-practice/blob/main/experiments/completeness-failure/2-no-output/analysis.md)|
+|[**Soundenss Failure - Fake Equality**](https://github.com/Jaehun-Kim-Brian/zkp-practice/tree/main/experiments/soundness-failure/1-fake-equality)| Circuit omits equality constraints between inputs `a` and `b`, allowing any proof to succeed.| [View Analysis](https://github.com/Jaehun-Kim-Brian/zkp-practice/tree/main/experiments/soundness-failure/1-fake-equality/analysis.md)|
 |*(More coming soon)*| Soundness & Zero-Knowledge experiments planned. | -|
 
 

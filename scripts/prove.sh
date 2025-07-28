@@ -13,12 +13,12 @@ snarkjs groth16 setup \
     $PTAU \
     $ZKEY
 
-# 2. Verification key 생성
+# 2. Verification key generation
 snarkjs zkey export verificationkey \
     $ZKEY \
     $BUILD_DIR/verification_key.json
 
-# 3. 증명생성 (witness -> proof)
+# 3. Proof generation (witness -> proof)
 snarkjs groth16 prove \
     $ZKEY \
     $BUILD_DIR/witness.wtns \
