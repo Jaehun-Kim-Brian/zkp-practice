@@ -9,7 +9,7 @@ While zero-knowledge proofs are mathematically well-defined, their security prop
 ## Project Goals
 
 | Security Property | Description | Implement Plan|
-|**Completeness** | If the statement is true, the prover should always generate a valid proof. | [v] Implemeneted (Incomplete Multiplier)|
+|**Completeness** | If the statement is true, the prover should always generate a valid proof. | [x] Implemeneted (Incomplete Multiplier)|
 |**Soundness** | If the statement is false, no prover should be able to convince the verifier. | [ ] Planned|
 |**Zero-Knowledgeness** | The verifier should learn nothing beyond the truth of the statement. | [ ] Planned|
 
@@ -26,9 +26,9 @@ While zero-knowledge proofs are mathematically well-defined, their security prop
 
 ### Results
 
-- Witness generated: [v] Success
-- Proof generated: [v] Success
-- Verifier output: `[INFO] snarkJS: OK!` -> [v] Accepted
+- Witness generated: [x] Success
+- Proof generated: [x] Success
+- Verifier output: `[INFO] snarkJS: OK!` -> [x] Accepted
 
 ### Analysis 
 
@@ -60,7 +60,7 @@ While zero-knowledge proofs are mathematically well-defined, their security prop
 
 ## Project Roadmap
 
-- [v] Completeness test with faulty circuit 
+- [x] Completeness test with faulty circuit 
 - [ ] Soundness test with crafted false claim
 - [ ] Zero-knowledge simulation and side-channel test
 - [ ] Add interactive visualization (e.g., Matplotlib, Streamlit)
