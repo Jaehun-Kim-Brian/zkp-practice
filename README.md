@@ -31,18 +31,6 @@ Detailed analysis for each experiment is documented separately in its correspond
 
 ---
 
-## Planned Experiments
-
-### Soundness Violation
-- Design a circuit that *looks correct* but allows the prover to prove a false statement (e.g., fake equality or fake hash preimage)
-- Test if the verifier still accepts invalid statements
-
-### Zero-Knowledge Violation
-- Construct a scenario where the verifier might learn some information about the witness
-- Attempt to extract secrets from the proof or simulate multiple transcripts
-
----
-
 ## Project  & Future Work
 
 - [x] Completeness test with faulty circuit 
